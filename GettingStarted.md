@@ -715,3 +715,16 @@ spec:
       imagePullSecrets:
         - name: image-pull-secret
 ```
+
+### 5.4 Simple Grid Wrapper
+Although CLAIMED grid wrappers with the different coordinator plugins are very powerful, sometimes it is also overwhelming. Therefore we created the simple_grid_wrapper plugin which allows you to just point as many parallel workers as you like to a directory of files. Those files are randomly processed by each worker, making sure there is only one worker processing a file. Once all files are processed, the results are renamed to original_file_name.PROCESSED.ext. Please have a look at the examples folder to create your own simple grid wrapper. Here are the commands, given you are in the examples folder of this repository:
+
+```
+(pip install claimed c3)  
+c3_create_gridwrapper simple_grid_wrapper_example.py -b simple_grid_wrapper 
+export CLAIMED_DATA_PATH=/path/to/your/c3/examples
+claimed --component local/claimed-gw-simple-grid-wrapper-example:0.1 --log_level "INFO" --sgw_source_folder /opt/app-root/src/data/simple_grid_wrapper_source --sgw_target_folder /opt/app-root/src/data/simple_grid_wrapper_target
+
+# you can also store the results in the source folder
+claimed --component local/claimed-gw-simple-grid-wrapper-example:0.1 --log_level "INFO" --sgw_source_folder /opt/app-root/src/data/simple_grid_wrapper_source_and_target --sgw_target_folder /opt/app-root/src/data/simple_grid_wrapper_source_and_target
+```
