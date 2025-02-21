@@ -16,6 +16,7 @@ GRID_WRAPPER_FILE = 'grid_wrapper_template.py'
 COS_GRID_WRAPPER_FILE = 'cos_grid_wrapper_template.py'
 LEGACY_COS_GRID_WRAPPER_FILE = 'legacy_cos_grid_wrapper_template.py'
 S3KV_GRID_WRAPPER_FILE = 's3kv_grid_wrapper_template.py'
+SIMPLE_GRID_WRAPPER_FILE = 'simple_grid_wrapper_template.py'
 
 # load templates
 template_path = Path(os.path.dirname(__file__))
@@ -55,3 +56,6 @@ with open(template_path / LEGACY_COS_GRID_WRAPPER_FILE, 'r') as f:
 
 with open(template_path / S3KV_GRID_WRAPPER_FILE, 'r') as f:
     s3kv_grid_wrapper_template = Template(f.read())
+
+with open(template_path / SIMPLE_GRID_WRAPPER_FILE, 'r') as f:
+    simple_grid_wrapper_template = Template(f.read())
