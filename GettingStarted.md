@@ -525,6 +525,13 @@ c3_create_operator --help
 
 C3 generates the container image that is pushed to the registry, a `<my-operator-script>.yaml` file for KubeFlow, a `<my-operator-script>.job.yaml` for Kubernetes, and a `<my-operator-script>.cwl` file for CWL.
 
+### 4.6 CLAIMED Containerless Operators
+CLAIMED containerless operators allow you to execute scripts as fully functional workflow components without the need for traditional containerization.
+
+After installing the claimed component compiler via pip install claimed c3, you can compile a script into a containerless operator just as you would for containerized components like Docker, Kubernetes (jobs, pods, deployments), Kubeflow, or Apache Airflow.
+
+Using the command c3_create_containerless_operator my_script.py, your script is transformed into a standalone, executable operator. An example of a containerless operator can be found in the [containerless-bootstrap repository](https://github.com/claimed-framework/containerless-bootstrap). These operators can be executed seamlessly using the claimed CLI, replacing the container registry path with the containerless prefix. For instance, running claimed --component containerless/claimed-util-cos:latest --cos_connection cos://access_key_id:secret_access_key@s3.us-east.cloud-object-storage.appdomain.cloud/some_bucket/some_path --operation put --local_path some_file.zip enables cloud object storage operations with the 'claimed-util-cos' without requiring a container runtime. This approach significantly reduces overhead and speeds up execution while maintaining compatibility with established workflow orchestration frameworks.
+
 
 ---
 
