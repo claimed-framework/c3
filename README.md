@@ -52,5 +52,9 @@ Please see [VULNERABILITIES.md](VULNERABILITIES.md) for reporting vulnerabilitie
 Interested in helping make CLAIMED better? We encourage you to take a look at our 
 [Contributing](CONTRIBUTING.md) page.
 
+## Credits
+
+CLAIMED is supported by the EU’s Horizon Europe program under Grant Agreement number 101131841 and also received funding from the Swiss State Secretariat for Education, Research and Innovation (SERI) and the UK Research and Innovation (UKRI).
+
 ## License
 This software is released under Apache License v2.0.
