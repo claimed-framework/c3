@@ -33,6 +33,7 @@ def wrap_component(component_path,
         'legacy_cos_grid_wrapper': c3.templates.legacy_cos_grid_wrapper_template,
         's3kv_grid_wrapper': c3.templates.s3kv_grid_wrapper_template,
         'simple_grid_wrapper': c3.templates.simple_grid_wrapper_template,
+        'folder_grid_wrapper': c3.templates.folder_grid_wrapper_template,
     }
     gw_template = backends.get(backend)
 

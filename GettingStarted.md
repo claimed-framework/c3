@@ -735,3 +735,23 @@ claimed --component local/claimed-gw-simple-grid-wrapper-example:0.1 --log_level
 # you can also store the results in the source folder
 claimed --component local/claimed-gw-simple-grid-wrapper-example:0.1 --log_level "INFO" --sgw_source_folder /opt/app-root/src/data/simple_grid_wrapper_source_and_target --sgw_target_folder /opt/app-root/src/data/simple_grid_wrapper_source_and_target
 ```
+
+### 5.5 Folder Grid Wrapper
+It's exactly like the simple grid wrapper but here you lock folder instead of files.
+Here are the commands, given you are in the examples/folder_grid_wrapper_example folder of this repository:
+```
+c3_create_gridwrapper folder_grid_wrapper_example.py -b folder_grid_wrapper
+export CLAIMED_DATA_PATH=/path/to/your/c3/examples
+claimed --component local/claimed-gw-folder-grid-wrapper-example:0.1 --log_level "INFO" --sgw_source_folder /opt/app-root/src/data/folder_grid_wrapper_source --sgw_target_folder /opt/app-root/src/data/folder_grid_wrapper_target
+```
+CLAIMED_DATA_PATH specifies the root directory that contains both the source and target folders used by the folder grid wrapper.
+For example, if 
+```
+CLAIMED_DATA_PATH=/c3/examples/folder_grid_wrapper_example
+```
+then the directory structure should look like this:
+```
+/c3/examples/folder_grid_wrapper_example/
+├── folder_grid_wrapper_source/
+├── folder_grid_wrapper_target/
+```
